@@ -1,9 +1,10 @@
 import app from "./app.js";
-import PORT from "./config.js";
+
+const PORT = process.env.PORT || 4200
 
 const main = ()=>{
-    app.listen(PORT.port, ()=>{
-        console.log(`The server is active in http://localhost:${PORT.port}`)
+    app.listen(PORT, ()=>{
+        console.log(`The server is active in http://localhost:${PORT}`)
     })
 };
 
