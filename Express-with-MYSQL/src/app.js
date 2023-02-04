@@ -2,6 +2,9 @@ import express from "express";
 import morgan from "morgan";
 import mysql from "mysql"
 import routerUsers  from "./routers/users.router.js"
+import routerCompanies from "./routers/company.router.js"
+import routerLocations from "./routers/locations.router.js"
+import routerProducts from "./routers/products.router.js";
 import routerDB from "./routers/database.router.js";
 
 const app = express();
@@ -38,9 +41,9 @@ app.get('/db/check/', (request,response)=>{
 })
 
 app.use("/api/users", routerUsers.routerUsers);
-app.use("/api/locations", routerUsers.routerUsers);
-app.use("/api/companies", routerUsers.routerUsers);
-app.use("/api/products", routerUsers.routerUsers);
+app.use("/api/locations", routerLocations.routerLocations);
+app.use("/api/companies", routerCompanies.routerCompanies);
+app.use("/api/products", routerProducts.routerProducts);
 
 app.use("/db", routerDB.routerDB);
 

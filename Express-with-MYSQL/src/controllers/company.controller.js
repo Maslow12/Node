@@ -61,8 +61,8 @@ const deleteCompanies = (request, response) => {
 }
 
 export const controller = {
-    getLocations,
-    createLocations,
-    updateLocations,
-    deleteLocations
+    getCompanies,
+    createCompanies,
+    updateCompanies,
+    deleteCompanies
 }

@@ -1,15 +1,15 @@
 import express, { response } from "express"
-import { controller } from "../controllers/location.controller.js"
-const routerUsers = express.Router()
+import { controller } from "../controllers/company.controller.js"
+const routerCompanies = express.Router()
 
-routerUsers.get('/', controller.getLocations);
+routerCompanies.get('/', controller.getCompanies);
 
-routerUsers.post('/', controller.createLocations);
+routerCompanies.post('/', controller.createCompanies);
 
-routerUsers.put('/:id', controller.updateLocations);
+routerCompanies.put('/:id', controller.updateCompanies);
 
-routerUsers.delete('/:id', controller.deleteLocations);
+routerCompanies.delete('/:id', controller.deleteCompanies);
 
 export default {
-    routerUsers
+    routerUsers: routerCompanies
 }

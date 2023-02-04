@@ -1,15 +1,15 @@
 import express, { response } from "express"
 import { controller } from "../controllers/location.controller.js"
-const routerUsers = express.Router()
+const routerLocations = express.Router()
 
-routerUsers.get('/', controller.getLocations);
+routerLocations.get('/', controller.getLocations);
 
-routerUsers.post('/', controller.createLocations);
+routerLocations.post('/', controller.createLocations);
 
-routerUsers.put('/:id', controller.updateLocations);
+routerLocations.put('/:id', controller.updateLocations);
 
-routerUsers.delete('/:id', controller.deleteLocations);
+routerLocations.delete('/:id', controller.deleteLocations);
 
 export default {
-    routerUsers
+    routerLocations
 }
