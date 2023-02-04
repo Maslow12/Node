@@ -1,8 +1,8 @@
 import { queryRetreive, insertDataInTable, updateDataInTable, deleteDataInTable}from "../database/database.mysql.utils.js";
 
-const MODEL = "User";
+const MODEL = "Location";
 
-const getUsers = (request, response) => {
+const getLocations = (request, response) => {
     try {
         const result = queryRetreive(MODEL).then((result)=>{
             response.send(result)
@@ -16,7 +16,7 @@ const getUsers = (request, response) => {
     }
 };
 
-const createUsers = (request, response) => {
+const createLocations = (request, response) => {
     try {
         const result = insertDataInTable(MODEL, request.body.data, request.body.fields).then((result)=>{
             response.send(result)
@@ -30,7 +30,7 @@ const createUsers = (request, response) => {
     }
 }
 
-const updateUsers = (request, response) => {
+const updateLocations = (request, response) => {
     try {
         if(request.params.id){
             const result = updateDataInTable(MODEL, request.params.id, request.body).then((result)=>{
@@ -45,7 +45,7 @@ const updateUsers = (request, response) => {
     }
 }
 
-const deleteUsers = (request, response) => {
+const deleteLocations = (request, response) => {
     try {
         if(request.params.id){
             const result = deleteDataInTable(MODEL, request.params.id).then((result)=>{
@@ -61,8 +61,8 @@ const deleteUsers = (request, response) => {
 }
 
 export const controller = {
-    getUsers,
-    createUsers,
-    updateUsers,
-    deleteUsers
+    getLocations,
+    createLocations,
+    updateLocations,
+    deleteLocations
 }

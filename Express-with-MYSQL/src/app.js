@@ -1,7 +1,7 @@
 import express from "express";
 import morgan from "morgan";
 import mysql from "mysql"
-import routerUsers  from "./routers/users.js"
+import routerUsers  from "./routers/users.router.js"
 import routerDB from "./routers/database.router.js";
 
 const app = express();
@@ -37,7 +37,10 @@ app.get('/db/check/', (request,response)=>{
     });
 })
 
-app.use("/api/user", routerUsers.routerUsers);
+app.use("/api/users", routerUsers.routerUsers);
+app.use("/api/locations", routerUsers.routerUsers);
+app.use("/api/companies", routerUsers.routerUsers);
+app.use("/api/products", routerUsers.routerUsers);
 
 app.use("/db", routerDB.routerDB);
 
